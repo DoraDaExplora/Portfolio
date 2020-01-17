@@ -1,0 +1,64 @@
+@import "teeqer-uxui/base-styles/abstracts/spaces.scss";
+@import "teeqer-uxui/base-styles/abstracts/typography.scss";
+
+:host {
+  display: block;
+}
+
+$border-radius--upper-left: 10px;
+$border-radius--upper-right: 10px;
+
+body {
+  background-color: rgb(56, 57, 58);
+}
+
+.navigation-tag {
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+
+  .nav {
+
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      padding: $space--smaller;
+      background-color: rgb(55, 56, 57);
+      color: white;
+      min-width: 50%;
+      border-top-left-radius: 10px;
+
+      &--inner {
+        display: flex;
+        align-items: center;
+        padding-right: $space*2;
+      }
+    }
+
+    &-button {
+        display: flex;
+
+      &--buy {
+        --color: #ffad2e;
+
+        &[disabled] {
+          --disabled-color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+
+  material-icon {
+    height: 24px !important;
+  }
+
+  .icon--active {
+    color: #ffad2e;
+  }
+
+  .icon--disabled {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}

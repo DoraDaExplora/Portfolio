@@ -1,0 +1,23 @@
+@import "teeqer-uxui/base-styles/abstracts/spaces.scss";
+@import "teeqer-uxui/base-styles/abstracts/typography.scss";
+
+:host {
+  display: block;
+}
+
+.navigation-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  
+  .logo-company {
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    padding-left: 18px !important;
+    padding-top: $space;
+  }
+}

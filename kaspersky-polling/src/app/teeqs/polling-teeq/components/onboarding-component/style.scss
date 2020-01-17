@@ -1,0 +1,28 @@
+@import "teeqer-uxui/base-styles/abstracts/spaces.scss";
+@import "teeqer-uxui/base-styles/abstracts/typography.scss";
+
+:host {
+  display: block;
+}
+
+.onboarding {
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: $space $space*2;
+      color: white;
+
+      h1 {
+        @include headline-1();
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+      }
+
+      p {
+        @include sub-title-1();
+        margin-top: 0 !important;
+      }
+    }
+}

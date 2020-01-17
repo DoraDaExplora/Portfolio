@@ -1,0 +1,209 @@
+:host {
+	display: block;
+  }
+  
+  $screen-mobile-max: 480px;
+  $screen-tablet-max: 899px;
+  $screen-mobile-min: 900px;
+  $bg-base-color: rgb(245, 245, 245);
+  
+  @mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+	  @content;
+	}
+	@-moz-keyframes #{$animationName}  {
+	  @content;
+	}
+	@-o-keyframes #{$animationName} {
+	  @content;
+	}
+	@keyframes #{$animationName} {
+	  @content;
+	}
+  }
+  
+  @mixin animation ($delay, $duration, $animation) {
+	-webkit-animation-delay: $delay;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-name: $animation;
+	-webkit-animation-fill-mode: forwards;
+  
+	-moz-animation-delay: $delay;
+	-moz-animation-duration: $duration;
+	-moz-animation-name: $animation;
+	-moz-animation-fill-mode: forwards;
+  
+	-o-animation-delay: $delay;
+	-o-animation-duration: $duration;
+	-o-animation-name: $animation;
+	-o-animation-fill-mode: forwards;
+  
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-name: $animation;
+	animation-fill-mode: forwards;
+  }
+  
+  @include keyframes(slide-in) {
+	0% {
+		  top: 100%;
+	  }
+  
+	  100% {
+		  top: 0%;
+	  }
+  }
+  
+  .extra-info {
+	  display: flex;
+	  align-items: flex-start;
+	  justify-content: flex-end;
+	  width: 100%;
+	  transition: 0.2s opacity ease-in-out;
+  
+	  &__intro-area {
+		  position: fixed;
+		  left: 0;
+		  top: 0;
+		  width: 50%;
+		  height: 100vh;
+		  background-position-x: 0%;
+		  background-position-y: 100%;
+		  background-repeat: no-repeat;
+		  transition: 0.2s opacity ease-in-out;
+  
+		  &--onboarding {
+			  //top: 100% !important;
+			  opacity: 0;
+			  transition: 0.4s opacity ease-in-out;
+			  //background: linear-gradient(to top, white, rgb(230, 196, 147));
+			  //background: rgb(230, 196, 147);
+			  background: $bg-base-color;
+			  z-index: 1;
+  
+			  .message {
+				  padding: 50px 32px 32px 32px;
+			  }
+  
+			  &__top {
+				  position: fixed;
+				  left: 0;
+				  top: 0;
+				  width: 50%;
+  
+				  &--logo {
+					  width: 100%;
+					  padding-bottom: 24px;
+				  }
+  
+				  &--message {
+					  padding: 0px 30% 0px 32px;
+					  p {
+						  font-size: 35px;
+						  font-weight: 800;
+						  line-height: 1.2;
+						  color: rgba(255,255,255,1);
+					  }
+				  }
+			  }
+  
+			  &__bottom {
+				  position: fixed;
+				  left: 0;
+				  bottom: 0;
+				  width: 50%;
+				  padding: 32px 32px 32px 32px;
+				  text-align: right;
+				  background-color: rgba(0,0,0,0.87);
+  
+				  h4 {
+					  font-size: 14px;
+					  font-weight: 500;
+					  line-height: 1;
+					  color: rgba(0,0,0,0.87);
+					  padding: 4px 8px 4px 0;
+					  border-right: 4px solid rgba(255,255,255,0.26);
+				  }
+  
+				  p {
+					  font-size: 14px;
+					  font-weight: 300;
+					  line-height: 1;
+					  color: rgba(255,255,255,0.87);;
+					  padding: 4px 8px 4px 0;
+					  border-right: 4px solid rgba(255,255,255,0.26);
+				  }
+			  }
+  
+			  &__logo {
+				  margin: 24px 0 0 24px;
+				  padding: 0;
+				  height: 45px;
+			  }
+  
+			  &.show {
+				  opacity: 1;
+				  //top: 0 !important;
+			  }
+		  }
+  
+		  &--placeholder {
+			  opacity: 0;
+			  transition: 0.4s opacity ease-in-out;
+			  position: fixed;
+			  left: 0;
+			  top: 0;
+			  background-size: cover;
+  
+			  &.fade {
+				  opacity: 1;
+  
+				  & ~ * > ::slotted(*) {
+					  opacity: 1 !important;
+				  }
+			  }
+		  }
+  
+		  @media screen and (max-width: $screen-tablet-max) {
+			  position: fixed;
+			  left: 0;
+			  top: 0;
+			  width: 100%;
+			  background-size: cover;
+  
+			  &.fade {
+				  opacity: 0;
+			  }
+		  }
+	  }
+  
+	  &__action-area {
+		  display: flex;
+		  justify-content: center;
+		  position: relative;
+		  left: 0;
+		  width: 50%;
+		  height: 100vh;
+		  background: #dbdbdb;
+		  z-index: 10;
+  
+		  @media screen and (max-width: $screen-tablet-max) {
+			  margin-left: 0%;
+			  width: 100%;
+		  }
+  
+  
+		  & > ::slotted(*) {
+			  opacity: 0;
+			  transition: 0.2s opacity ease-in-out 0.6s, 0.4s transform ease-in-out;
+			  z-index: 101 !important;
+			  margin: 15px auto;
+  
+			  @media (max-width: 400px) {
+				  margin: 0;
+				//   transition: 0.2s opacity ease-in-out, 0.4s transform ease-in-out;
+			  }
+		  }
+	  }
+  }
+  

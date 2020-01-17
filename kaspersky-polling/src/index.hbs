@@ -1,0 +1,130 @@
+<!-- The `htmlWebpackPlugin.options.config` object contains all the variables declared in your `app.config.js` file -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Polymer 3 Webpack Starter Kit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>{{htmlWebpackPlugin.options.config.app.name}}</title>
+    <meta name="description" content="{{htmlWebpackPlugin.options.config.app.description}}">
+
+    {{!-- <base href="{{htmlWebpackPlugin.options.config.app.basePath}}"> --}}
+
+    <link rel="icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My App">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My App">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <script>
+      window.Polymer = {rootPath: '{{htmlWebpackPlugin.options.config.app.basePath}}'};
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js', {
+            scope: Polymer.rootPath,
+          });
+        });
+      }
+    </script>
+
+    {{#if htmlWebpackPlugin.options.config.app.transpile}}
+    <!-- Load the elements adapter for es5 transpiled code -->
+    <script src="scripts/wc/custom-elements-es5-adapter.js"></script>
+    {{/if}}
+
+    <!-- Add any global styles for body, document, etc. -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        background-color: #eee;
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{htmlWebpackPlugin.options.config.app.gtag}}');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Maxymiser script start --> <script type="text/javascript" src="//service.maxymiser.net/api/eu/me.kaspersky.com/265d68/mmapi.js"></script> <!-- Maxymiser script end -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5ZL5MG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <standalone-landing></standalone-landing>
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+    <script>
+      // pls
+      function correctFiles() {
+        if (['https://kaspersky.teeqer.com', 'https://master-kaspersky-polling.teeqer.com'].includes(window.location.origin)) {
+          const scripts = Array.from(document.body.querySelectorAll('script[src*=scripts]'));
+          scripts.forEach(script => {
+            console.log(script.src);
+            const newScript = document.createElement('script');
+            newScript.src = `${window.location.origin}/${script.src.slice(script.src.indexOf('scripts'))}`;
+            document.body.appendChild(newScript);
+            document.body.removeChild(script);
+          });
+        }
+      }
+      document.addEventListener('DOMContentLoaded', correctFiles);
+    </script>
+
+    <script>
+      var kaspersky = {
+        'isStaging' : 0,
+        'pageName': 'Landing Pages > Teeq Polling TR',
+        'siteLocale': 'tr-TR',
+        'pageLocale': 'tr-TR',
+        'siteType': 'Default',
+        'platformName': 'NextGen',
+        'pageCharset': 'UTF-8' ,
+        'trackPageViewOnLoad': 0
+      };
+    </script>
+
+    <script language="JavaScript" type="text/javascript" src="//media.kaspersky.com/tracking/omniture/s_code_single_suite.js"></script>
+
+    <script>
+          trackPageView(kaspersky.pageName);
+    </script>
+
+    <script language="JavaScript" type="text/javascript" src="//media.kaspersky.com/tracking/omniture/omniture_forward_campaign.js "></script>
+    <!-- Omniture script end -->  
+
+  </body>
+</html>

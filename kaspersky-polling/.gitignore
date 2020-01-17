@@ -1,0 +1,14 @@
+.idea/
+build__item/
+dist/
+build/
+cosmo/
+**/node_modules/
+**/*.log
+.firebaserc
+
+yarn.lock
+
+.DS_STORE
+.cache-loader
+.vscode

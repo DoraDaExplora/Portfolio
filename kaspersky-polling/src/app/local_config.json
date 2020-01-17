@@ -1,0 +1,625 @@
+{
+    "components": [
+        {
+            "name": "polling-teeq",
+            "type": "teeq",
+            "url": "",
+            "initialState": "visible",
+            "content": {
+                "questions": [
+                    {
+                        "questionID": 0,
+                        "questionTitle": "Donanımla başlayalım: Online arkadaşlık yaparken hangi cihazları kullanıyorsunuz?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Ne olursa! İş için kullandığım cihazlar da dahil."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Yalnızca aile bilgisayarım, iş bilgisayarım ve akıllı telefonum."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Hep hareket halindeyim, o yüzden akıllı cihaz ve tabletim."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Tüm profillerimi tek bir cihaz üzerinden takip etmek daha kolay oluyor."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 1,
+                        "questionTitle": "Bugüne kadar hangi uygulamaları indirdiniz ya da indirmeyi düşünürsünüz?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Ne bulursam! Şansımı artıracak her şeye varım!"
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "En popüler olanı. Neydi adı, Grinder mi?"
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Kullanıcı yorumlarını okuduktan sonra denenmiş ve onaylanmış bir uygulamayı indiririm."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Arkadaşlarıma hangi uygulamayı kullandıklarını sorarım, sonra da beni yakalamasınlar diyeonların kullanmadığı bir uygulamayı indiririm. Nasıl ama?"
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 2,
+                        "questionTitle": "Arkadaşlık uygulamaları sizden bir sosyal ağ hesabıyla oturum açmanızı ister. Bunu nasıl halledersiniz?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Her zaman kullandığım hesabımla oturum açarım. Diğer yöntemler çok zaman alıyor."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Uzun zamandır kullanmadığım, bilgilerin yarısını boş bıraktığım eski bir hesabıma bağlanırım."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Ana hesabımla oturum açarım ama gizlilik ayarlarımı herkesin her bilgiyi göremeyeceği şek-ilde düzenlerim."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Ayrı bir e-posta hesabı oluştururum, bu hesapla sahte bir sosyal medya profili açarım ve arkadaşlık uygulamasında oturum açmak için bu profili kullanırım."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 3,
+                        "questionTitle": "Kullanıcı resmi olarak ne tercih ediyorsunuz?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Sosyal medya hesabımdaki fotoğrafı, en iyi çıktığım fotoğraf o!"
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "En güzel tatil fotoğrafımı kullanıyorum, plaj fotoğraflarına herkes bayılır."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Diğer online hesaplarımda olmayan yeni bir fotoğraf kullanıyorum."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Başka birinin fotoğrafını kullanıyorum."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 4,
+                        "questionTitle": "Profilinizde hangi alanları doldurdunuz?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Ev adresimden iş programıma kadar her şeyi yazarım, partner olarak her yönden en doğru kişiyi bulmak isterim."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Birkaç sosyal medya hesabımın bağlantısını eklerim, ilgi uyandırmak önemli."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Sadece temel bilgileri paylaşır, gerekli alanları doldururum. Özelime girmeye ne gerek var?"
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Yalnızca adımı yazarım, onu da genellikle uydururum. Diğer detayları özel mesajlara saklıyorum."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 5,
+                        "questionTitle": "Uygulama, kurulum esnasında sizden SMS, rehberi görüntüleme ve arama yapma gibi işlevler için erişim izni isterse ne yaparsınız?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Aşk için her şeye değer!"
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Fazla absürt istekleri reddederim ama fotoğraflar ve sesli mesajlaşma gibi özellikler için kamera ve mikrofona erişim izni verebilirim."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Şimdilik hiçbir erişim iznini onaylamam. Gerekirse, belki daha sonra olabilir."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Kurulumu iptal ederim. Belki de zararlı bir uygulama, nereden bileyim?"
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 6,
+                        "questionTitle": "İlk eşleşmeniz çok fazla soru soruyor; doğum yerinizden evcil hayvanlarınızın adına, hatta anne kızlık soyadınıza kadar öğrenmek istiyor. Biraz fazla mı meraklı acaba?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Normal, sohbet ediyoruz işte. İnsanlar birbirlerini böyle tanır."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Kişisel detaylara girmeden önce biraz bekleyebilirim. Bir hafta kadar sohbet ettikten sonra duruma göre bakarız."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Bana tuhaf gelir. Konuşmayı daha genel konulara çekmeye çalışırım."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Son derece şüpheli bir davranış, cevap vermem."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 7,
+                        "questionTitle": "Eşleştiğiniz biriyle sohbet ederken sizi bir klipte gördüğünü söyledi ve bir link gönderdi. Bağlantıya tıklar mısınız?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Tabii ki. İçeriği ve paylaşan kişiyi öğrenmek isterim."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Bağlantı adresi zararsız görünüyorsa neden olmasın?"
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Evet ama ancak gönderenin bot hesap değil, gerçek bir insan olduğundan emin olduktan sonra tıklarım."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Asla! Engeller geçerim."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 8,
+                        "questionTitle": "Şimdi de işinizle ilgili sorular gelmeye başladı: Nerede, hangi departmanda çalıştığınız ve ne iş yaptığınız merak ediliyor. Bu soruları nasıl karşılarsınız?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Yaptıkların kim olduğunu belirler. İşimle gurur duyuyorum!"
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Nerede çalıştığımı ve ne iş yaptığımı ana hatlarıyla açıklarım. Bu aşamada daha fazla detaya girmeye gerek yok."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "'Finans sektöründe çalışıyorum' ya da 'Bilim adamıyım' gibi çok genel bir cevap veririm."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Bu soruyu görmezden gelip konuyu farklı bir yöne çekerim."
+                            }
+                        ]
+                    },
+                    {
+                        "questionID": 9,
+                        "questionTitle": "Online arkadaşlık işi sizi sıkmaya başladı. Uygulamayı kullanmayı nasıl bırakırsınız?",
+                        "answers": [
+                            {
+                                "answerID": 0,
+                                "answerText": "Oturum açmayı bırakırım. Zaten bir süre sonra uygulama geliştiricileri hesabımı siler. Bana muhtaç kalacak halleri yok ya."
+                            },
+                            {
+                                "answerID": 1,
+                                "answerText": "Uygulamayı silerim. Ne de olsa verilerimi sonsuza kadar saklamayacaklar."
+                            },
+                            {
+                                "answerID": 2,
+                                "answerText": "Uygulamayı kaldırmadan önce “Hesabımı Sil” seçeneğini bulup tıklarım."
+                            },
+                            {
+                                "answerID": 3,
+                                "answerText": "Geliştiricilere e-posta göndererek verilerimi sunucudan silmelerini rica ederim. Ya hatlarda bir sızıntı olursa?"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "components": [
+                {
+                    "url": "",
+                    "name": "header-component",
+                    "type": "teeq-component",
+                    "initialState": "minimized",
+                    "content": {
+                        "imageLink": "https://static.teeqer.com/kaspersky-polling/Kasplogo.png"
+                    }
+                },
+                {
+                    "url": "",
+                    "name": "onboarding-component",
+                    "type": "teeq-component",
+                    "initialState": "visible",
+                    "content": {
+                        "title": "Online Arkadaşlık Yaparken Hangi Riskleri Alıyorsunuz?",
+                        "author": "Robot Marvin",
+                        "quizIntroText": "İnternet kullanıcılarının üçte biri; Happn, OkCupid, Tinder, Badoo ve daha ismini bildiğiniz pek çok online arkadaşlık uygulamalarını kullanıyor. Yakın zamanda yapılan bir araştırmaya göre, bu kullanıcıların % 68'i kişisel ve özel verilerinin güvenliğiyle ilgili kaygılar taşıyor.",
+                        "quizIntroTextEnding": "Peki ya siz, online arkadaşlık platformlarını kullanırken ne kadar risk alıyorsunuz? Kişisel bil-gileriniz çalınma tehlikesi altında olabilir mi? Öğrenmek için hemen testimizi çözün!"
+                    }
+                },
+                {
+                    "url": "",
+                    "name": "polling-component",
+                    "type": "teeq-component",
+                    "initialState": "closed",
+                    "content": {
+                        "title": "Online Arkadaşlık Yaparken Hangi Riskleri Alıyorsunuz?",
+                        "questions": [
+                            {
+                                "questionID": 0,
+                                "questionTitle": "Donanımla başlayalım: Online arkadaşlık yaparken hangi cihazları kullanıyorsunuz?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Ne olursa! İş için kullandığım cihazlar da dahil."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Yalnızca aile bilgisayarım, iş bilgisayarım ve akıllı telefonum."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Hep hareket halindeyim, o yüzden akıllı cihaz ve tabletim."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Tüm profillerimi tek bir cihaz üzerinden takip etmek daha kolay oluyor."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 1,
+                                "questionTitle": "Bugüne kadar hangi uygulamaları indirdiniz ya da indirmeyi düşünürsünüz?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Ne bulursam! Şansımı artıracak her şeye varım!"
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "En popüler olanı. Neydi adı, Grinder mi?"
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Kullanıcı yorumlarını okuduktan sonra denenmiş ve onaylanmış bir uygulamayı indiririm."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Arkadaşlarıma hangi uygulamayı kullandıklarını sorarım, sonra da beni yakalamasınlar diyeonların kullanmadığı bir uygulamayı indiririm. Nasıl ama?"
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 2,
+                                "questionTitle": "Arkadaşlık uygulamaları sizden bir sosyal ağ hesabıyla oturum açmanızı ister. Bunu nasıl halledersiniz?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Her zaman kullandığım hesabımla oturum açarım. Diğer yöntemler çok zaman alıyor."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Uzun zamandır kullanmadığım, bilgilerin yarısını boş bıraktığım eski bir hesabıma bağlanırım."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Ana hesabımla oturum açarım ama gizlilik ayarlarımı herkesin her bilgiyi göremeyeceği şek-ilde düzenlerim."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Ayrı bir e-posta hesabı oluştururum, bu hesapla sahte bir sosyal medya profili açarım ve arkadaşlık uygulamasında oturum açmak için bu profili kullanırım."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 3,
+                                "questionTitle": "Kullanıcı resmi olarak ne tercih ediyorsunuz?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Sosyal medya hesabımdaki fotoğrafı, en iyi çıktığım fotoğraf o!"
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "En güzel tatil fotoğrafımı kullanıyorum, plaj fotoğraflarına herkes bayılır."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Diğer online hesaplarımda olmayan yeni bir fotoğraf kullanıyorum."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Başka birinin fotoğrafını kullanıyorum."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 4,
+                                "questionTitle": "Profilinizde hangi alanları doldurdunuz?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Ev adresimden iş programıma kadar her şeyi yazarım, partner olarak her yönden en doğru kişiyi bulmak isterim."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Birkaç sosyal medya hesabımın bağlantısını eklerim, ilgi uyandırmak önemli."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Sadece temel bilgileri paylaşır, gerekli alanları doldururum. Özelime girmeye ne gerek var?"
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Yalnızca adımı yazarım, onu da genellikle uydururum. Diğer detayları özel mesajlara saklıyorum."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 5,
+                                "questionTitle": "Uygulama, kurulum esnasında sizden SMS, rehberi görüntüleme ve arama yapma gibi işlevler için erişim izni isterse ne yaparsınız?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Aşk için her şeye değer!"
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Fazla absürt istekleri reddederim ama fotoğraflar ve sesli mesajlaşma gibi özellikler için kamera ve mikrofona erişim izni verebilirim."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Şimdilik hiçbir erişim iznini onaylamam. Gerekirse, belki daha sonra olabilir."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Kurulumu iptal ederim. Belki de zararlı bir uygulama, nereden bileyim?"
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 6,
+                                "questionTitle": "İlk eşleşmeniz çok fazla soru soruyor; doğum yerinizden evcil hayvanlarınızın adına, hatta anne kızlık soyadınıza kadar öğrenmek istiyor. Biraz fazla mı meraklı acaba?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Normal, sohbet ediyoruz işte. İnsanlar birbirlerini böyle tanır."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Kişisel detaylara girmeden önce biraz bekleyebilirim. Bir hafta kadar sohbet ettikten sonra duruma göre bakarız."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Bana tuhaf gelir. Konuşmayı daha genel konulara çekmeye çalışırım."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Son derece şüpheli bir davranış, cevap vermem."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 7,
+                                "questionTitle": "Eşleştiğiniz biriyle sohbet ederken sizi bir klipte gördüğünü söyledi ve bir link gönderdi. Bağlantıya tıklar mısınız?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Tabii ki. İçeriği ve paylaşan kişiyi öğrenmek isterim."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Bağlantı adresi zararsız görünüyorsa neden olmasın?"
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Evet ama ancak gönderenin bot hesap değil, gerçek bir insan olduğundan emin olduktan sonra tıklarım."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Asla! Engeller geçerim."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 8,
+                                "questionTitle": "Şimdi de işinizle ilgili sorular gelmeye başladı: Nerede, hangi departmanda çalıştığınız ve ne iş yaptığınız merak ediliyor. Bu soruları nasıl karşılarsınız?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Yaptıkların kim olduğunu belirler. İşimle gurur duyuyorum!"
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Nerede çalıştığımı ve ne iş yaptığımı ana hatlarıyla açıklarım. Bu aşamada daha fazla detaya girmeye gerek yok."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "'Finans sektöründe çalışıyorum' ya da 'Bilim adamıyım' gibi çok genel bir cevap veririm."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Bu soruyu görmezden gelip konuyu farklı bir yöne çekerim."
+                                    }
+                                ]
+                            },
+                            {
+                                "questionID": 9,
+                                "questionTitle": "Online arkadaşlık işi sizi sıkmaya başladı. Uygulamayı kullanmayı nasıl bırakırsınız?",
+                                "answers": [
+                                    {
+                                        "answerID": 0,
+                                        "answerText": "Oturum açmayı bırakırım. Zaten bir süre sonra uygulama geliştiricileri hesabımı siler. Bana muhtaç kalacak halleri yok ya."
+                                    },
+                                    {
+                                        "answerID": 1,
+                                        "answerText": "Uygulamayı silerim. Ne de olsa verilerimi sonsuza kadar saklamayacaklar."
+                                    },
+                                    {
+                                        "answerID": 2,
+                                        "answerText": "Uygulamayı kaldırmadan önce “Hesabımı Sil” seçeneğini bulup tıklarım."
+                                    },
+                                    {
+                                        "answerID": 3,
+                                        "answerText": "Geliştiricilere e-posta göndererek verilerimi sunucudan silmelerini rica ederim. Ya hatlarda bir sızıntı olursa?"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "",
+                    "name": "final-component",
+                    "type": "teeq-component",
+                    "initialState": "closed",
+                    "content": {
+                        "placeholder": "You're ",
+                        "actionBtn": "HEMEN DENEYİN",
+                        "imageLink": "https://static.teeqer.com/kaspersky-polling/kasper_securecon.png"
+                    }
+                },
+                {
+                    "url": "",
+                    "name": "navigation-component",
+                    "type": "teeq-component",
+                    "initialState": "minimized",
+                    "content": {
+                    }
+                }
+            ],
+            "transitions": [
+                {
+                    "source": "navigation-component",
+                    "sourceType": "teeq-component",
+                    "sourceParent": "polling-teeq",
+                    "name": "increment-counter",
+                    "params": [],
+                    "transactions": [
+                        {
+                            "eventType": "increment-property",
+                            "target": "polling-component",
+                            "property": "counter",
+                            "params": [],
+                            "data": null
+                        },
+                        {
+                            "eventType": "increment-property",
+                            "target": "navigation-component",
+                            "property": "counter",
+                            "params": [],
+                            "data": null
+                        }
+                    ]
+                },
+                {
+                    "source": "navigation-component",
+                    "sourceType": "teeq-component",
+                    "sourceParent": "polling-teeq",
+                    "name": "set-button-state",
+                    "params": [],
+                    "transactions": [
+                        {
+                            "eventType": "set-property",
+                            "target": "navigation-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "visible"
+                        }
+                    ]
+                },
+                {
+                    "source": "navigation-component",
+                    "sourceType": "teeq-component",
+                    "sourceParent": "polling-teeq",
+                    "name": "show-polling-component",
+                    "params": [],
+                    "transactions": [
+                        {
+                            "eventType": "set-property",
+                            "target": "header-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "closed"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "onboarding-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "closed"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "polling-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "visible"
+                        }
+                    ]
+                },
+                {
+                    "source": "navigation-component",
+                    "sourceType": "teeq-component",
+                    "sourceParent": "polling-teeq",
+                    "name": "display-final-page",
+                    "params": [],
+                    "transactions": [
+                        {
+                            "eventType": "set-property",
+                            "target": "header-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "visible"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "onboarding-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "closed"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "polling-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "closed"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "final-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "visible"
+                        },
+                        {
+                            "eventType": "set-property",
+                            "target": "navigation-component",
+                            "property": "state",
+                            "params": [],
+                            "data": "closed"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "name": "kasppolling-oasis",
+    "transitions": [
+    ]
+}

@@ -1,0 +1,15 @@
+@import "teeqer-uxui/base-styles/abstracts/spaces.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  height: 100%;
+
+  @media (min-width: 414px) {
+    max-width: 414px !important;
+  }
+
+}

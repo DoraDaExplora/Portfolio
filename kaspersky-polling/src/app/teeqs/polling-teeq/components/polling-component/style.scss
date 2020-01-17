@@ -1,0 +1,133 @@
+@import "teeqer-uxui/base-styles/abstracts/spaces.scss";
+@import "teeqer-uxui/base-styles/abstracts/typography.scss";
+
+:host {
+  display: block;
+}
+
+.polling-component {
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: $space 0px;
+      color: white;
+    }
+      
+    h1 {
+      @include headline-1();
+      margin-bottom: 0 !important;
+      text-transform: none !important;
+    }
+
+    h3 {
+      margin-bottom: 0 !important;
+      text-transform: none !important;
+    }
+
+    .polling--title {
+      @include sub-title-1();
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      text-transform: none !important;
+    }
+
+    .polling-header {
+      margin-bottom: $space--smaller;
+      padding-left: $space;
+      padding-right: $space;
+      width: 90%;
+
+      &--title {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+      }
+
+      &--counter {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+      }
+    }
+
+    .polling-content {
+      box-sizing: border-box;
+      width: 100%;
+
+      h3 {
+        margin-top: 0 !important;
+        margin-bottom: $space--smaller !important;
+        text-transform: none !important;
+      }
+
+      &--answers {
+        margin-bottom: $space--smaller;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+
+      &--question {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        text-transform: none !important;
+        padding-left: $space;
+        padding-right: $space;
+        max-width: 370px !important;
+      }
+    }
+}
+
+material-button {
+  --color: rgb(12, 109, 92);
+  --button-justify-content: center;
+  --min-width: 100px;
+  --button-margin: 0;
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+  color: white !important;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  padding-left: $space;
+  padding-right: $space;
+  box-sizing: border-box;
+}
+
+.teeq-answer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  input[type=radio] {
+    display:none;
+  }
+
+  input[type=radio]:checked + .radio{
+    background-color:#ffffff;
+    color: #0c6d5c;
+  }
+
+  .radio {
+    width: 100%;
+    margin: 0;
+    padding: $space;
+    padding-left: $space;
+    transition: background-color 200ms, color 200ms;
+  }
+
+  p {
+    @include text-2();
+    margin: 0;
+  }
+
+}
