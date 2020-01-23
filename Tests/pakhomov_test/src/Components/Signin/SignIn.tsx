@@ -73,17 +73,28 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const SignIn = (props: any) => {
-  const [userEmail, setUserEmail] = useState([]);
+  const [userEmail, setUserEmail] = useState([]); //Хук для ввода почты
+  const [userPassword, setUserPassword] = useState([]); //Хук для ввода пароля
   useStyles();
 
   const submitControl = (event: any) => {
     event.preventDefault();
     console.log('the submit button is clicked.', event.target);
+    const submitObject = {
+      email: userEmail,
+      password: userPassword
+    }
+    console.log('This is the submitObject that will be sent to the backend ' + JSON.stringify(submitObject));
   }
   
   const handleEmailInput = (event: any) => {
     console.log("User Email: " + event.target.value);
     setUserEmail(event.target.value);
+  }
+
+  const handlePasswordInput = (event: any) => {
+    console.log("User Password: " + event.target.value);
+    setUserPassword(event.target.value);
   }
 
   return (
@@ -119,11 +130,12 @@ export const SignIn = (props: any) => {
             label="Пароль"
             type="password"
             id="password"
-            autoComplete="current-password"
+            onChange = {(e: any) => {handlePasswordInput(e)}}
+            value = {userPassword}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Запомнить меня"
+            control={<Checkbox value="remember" color="primary" />} //Если отмечено "запомнить", то надо добавлять этот проп в submitObject и тогда сторить токен в localStorage
+            label="Запомнить меня"                                  //Иначе не нужно
           />
           <SubmitButton
             type="submit"
