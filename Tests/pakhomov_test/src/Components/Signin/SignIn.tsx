@@ -88,12 +88,10 @@ export const SignIn = (props: any) => {
   }
   
   const handleEmailInput = (event: any) => {
-    console.log("User Email: " + event.target.value);
     setUserEmail(event.target.value);
   }
 
   const handlePasswordInput = (event: any) => {
-    console.log("User Password: " + event.target.value);
     setUserPassword(event.target.value);
   }
 
