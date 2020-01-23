@@ -101,7 +101,7 @@ export const SignIn = (props: any) => {
     <MyContainer component="main" maxWidth="xs">
       <CssBaseline />
       <FormContainer id="kek">
-        <FormAvatar align="center">
+        <FormAvatar>
           <LockOutlinedIcon />
         </FormAvatar>
         <Typography component="h1" variant="h5" align="center">
@@ -132,6 +132,7 @@ export const SignIn = (props: any) => {
             id="password"
             onChange = {(e: any) => {handlePasswordInput(e)}}
             value = {userPassword}
+            // error = {} Проп должен работать только при получении негативного респонса от бэкенда
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />} //Если отмечено "запомнить", то надо добавлять этот проп в submitObject и тогда сторить токен в localStorage
