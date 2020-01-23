@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -72,8 +72,19 @@ function Copyright() {
 const useStyles = makeStyles(theme => ({
 }));
 
-export const SignIn = (type: any) => {
+export const SignIn = (props: any) => {
+  const [userEmail, setUserEmail] = useState([]);
   useStyles();
+
+  const submitControl = (event: any) => {
+    event.preventDefault();
+    console.log('the submit button is clicked.', event.target);
+  }
+  
+  const handleEmailInput = (event: any) => {
+    console.log("User Email: " + event.target.value);
+    setUserEmail(event.target.value);
+  }
 
   return (
     <MyContainer component="main" maxWidth="xs">
@@ -85,7 +96,7 @@ export const SignIn = (type: any) => {
         <Typography component="h1" variant="h5" align="center">
           Вход в аккаунт
         </Typography>
-        <Form noValidate>
+        <Form noValidate onSubmit = {(e) => {submitControl(e)}}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -96,6 +107,8 @@ export const SignIn = (type: any) => {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange = {(e: any) => {handleEmailInput(e)}}
+            value = {userEmail}
           />
           <TextField
             variant="outlined"
