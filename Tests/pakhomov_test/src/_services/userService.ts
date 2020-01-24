@@ -1,6 +1,5 @@
 export const userService = {
-    login,
-    register
+    login
 };
 
 function login(userName, userPassword) {
@@ -10,7 +9,7 @@ function login(userName, userPassword) {
         body: JSON.stringify({ userName, userPassword })
     };
 
-    return fetch(`http://localhost:4000/`, requestOptions)
+    return fetch(`http://localhost:3000/`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -26,7 +25,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`http://localhost:4000/`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:3000/`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
