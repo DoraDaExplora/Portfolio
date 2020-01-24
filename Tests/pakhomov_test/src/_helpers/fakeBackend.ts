@@ -6,14 +6,14 @@ export function configureFakeBackend() {
             setTimeout(() => {
                 let params = JSON.parse(JSON.stringify(opts.body));
                 let filteredUsers = users.filter((user: any) => {
-                    return user.username === params.username && user.password === params.password;
+                    return user.userName === params.userName && user.userPassword === params.userPassword;
                 });
 
                 if (filteredUsers.length) {
                     let user = filteredUsers[0];
                     let responseJson = {
                         id: user.id,
-                        username: user.username,
+                        userName: user.userName,
                         token: '86fasfgfsogHGad'
                     };
                     resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)) });
