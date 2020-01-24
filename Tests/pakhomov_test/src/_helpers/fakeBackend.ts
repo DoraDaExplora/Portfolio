@@ -18,7 +18,7 @@ export function configureFakeBackend() {
                     };
                     resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)) });
                 } else {
-                    reject('Username or password is incorrect');
+                    reject('Почта или пароль неверны');
                 }
 
                 return;
