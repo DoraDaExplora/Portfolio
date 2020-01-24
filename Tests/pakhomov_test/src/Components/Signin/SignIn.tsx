@@ -73,22 +73,22 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const SignIn = (props: any) => {
-  const [userEmail, setUserEmail] = useState([]); //Хук для ввода почты
+  const [userName, setUserName] = useState([]); //Хук для ввода почты
   const [userPassword, setUserPassword] = useState([]); //Хук для ввода пароля
-  useStyles();
+  useStyles(props);
 
   const submitControl = (event: any) => {
     event.preventDefault();
     console.log('the submit button is clicked.', event.target);
     const submitObject = {
-      email: userEmail,
+      userName: userName,
       password: userPassword
     }
     console.log('This is the submitObject that will be sent to the backend ' + JSON.stringify(submitObject));
   }
   
   const handleEmailInput = (event: any) => {
-    setUserEmail(event.target.value);
+    setUserName(event.target.value);
   }
 
   const handlePasswordInput = (event: any) => {
@@ -117,7 +117,7 @@ export const SignIn = (props: any) => {
             autoComplete="email"
             autoFocus
             onChange = {(e: any) => {handleEmailInput(e)}}
-            value = {userEmail}
+            value = {userName}
           />
           <TextField
             variant="outlined"
