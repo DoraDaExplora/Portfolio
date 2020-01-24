@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { userActions } from '../../_actions/userActions';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -69,22 +71,31 @@ function Copyright() {
   );
 }
 
+function mapState(state) {
+  const { loggingIn } = state.authentication;
+  return { loggingIn };
+}
+
+const actionCreators = {
+  login: userActions.login
+}
+
 const useStyles = makeStyles(theme => ({
 }));
 
-export const SignIn = (props: any) => {
-  const [userName, setUserName] = useState([]); //Хук для ввода почты
-  const [userPassword, setUserPassword] = useState([]); //Хук для ввода пароля
+const SignIn = (props: any) => {
+  const [userName, setUserName] = useState(''); //Хук для ввода почты
+  const [userPassword, setUserPassword] = useState(''); //Хук для ввода пароля
+  const [loggingIn, setLoggingIn] = useState(false); //Хук для залива
   useStyles(props);
 
-  const submitControl = (event: any) => {
+  const submitControl = (event: any, props: any) => {
     event.preventDefault();
     console.log('the submit button is clicked.', event.target);
-    const submitObject = {
-      userName: userName,
-      password: userPassword
+    setLoggingIn(true);
+    if (userName && userPassword) {
+      props.login(userName, userPassword);
     }
-    console.log('This is the submitObject that will be sent to the backend ' + JSON.stringify(submitObject));
   }
   
   const handleEmailInput = (event: any) => {
@@ -105,7 +116,7 @@ export const SignIn = (props: any) => {
         <Typography component="h1" variant="h5" align="center">
           Вход в аккаунт
         </Typography>
-        <Form noValidate onSubmit = {(e) => {submitControl(e)}}>
+        <Form noValidate onSubmit = {(e) => {submitControl(e, props)}}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -164,3 +175,7 @@ export const SignIn = (props: any) => {
     </MyContainer>
   );
 }
+
+const connectedSignIn = connect(mapState, actionCreators)(SignIn);
+export { connectedSignIn as SignIn};
+
