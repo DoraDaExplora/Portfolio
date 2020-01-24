@@ -1,4 +1,4 @@
-let users = JSON.parse(localStorage.getItem('users')) || [];
+let users = JSON.parse(localStorage.getItem('users')!) || []; //Восклицательный знак для того, чтобы не было одного заковыристого эррора. Мы делаем вид, что уверены в невозможности возвращения null
     
 export function configureFakeBackend() {
     window.fetch = function (url, opts) {
