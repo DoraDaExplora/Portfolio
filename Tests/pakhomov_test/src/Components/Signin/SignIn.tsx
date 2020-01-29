@@ -95,6 +95,7 @@ const SignIn = (props: any) => {
     setLoggingIn(true);
     if (userName && userPassword) {
       props.login(userName, userPassword);
+      console.log('userName and userPassword are passed to login');
     }
   }
   
