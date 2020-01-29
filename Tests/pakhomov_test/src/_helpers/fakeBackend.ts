@@ -17,13 +17,13 @@ export function configureFakeBackend() {
             setTimeout(() => {
 
                 if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
-                    let params:any = opts.body; //что передаём
+                    let params:any = JSON.parse(opts.body);
                     console.log('params ' + params);
 
                     //auth
                     let filteredUsers = users.filter((user: { userName: any; userPassword: any; }) => {
-                        console.log('user ' + JSON.stringify(user)); //с чем сравниваем
-                        return user.userName === params.userName && user.userPassword === params.userPassword; //проблема видимо именно в этом //Да, юзер не кидается в filteredUsers
+                        console.log('user ' + JSON.stringify(user));
+                        return user.userName === params.userName && user.userPassword === params.userPassword;
                     });
 
                     console.log('filteredUsers ' + filteredUsers[0]);
