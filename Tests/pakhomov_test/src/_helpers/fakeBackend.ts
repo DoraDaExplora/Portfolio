@@ -1,32 +1,49 @@
-let users = JSON.parse(localStorage.getItem('users')) || []; //Восклицательный знак для того, чтобы не было одного заковыристого эррора. Мы делаем вид, что уверены в невозможности возвращения null
-    
+localStorage.setItem('users', JSON.stringify([{
+    userName: 'name',
+    userPassword: 'password'
+},
+{
+    userName: 'name1',
+    userPassword: 'password1'
+}]));
+
+let users = JSON.parse(localStorage.getItem('users'));
+console.log('users from localStorage ' + JSON.stringify(users));
+
+
 export function configureFakeBackend() {
-    window.fetch = function (url, opts) {
+    window.fetch = (url:any, opts:any) => {
         return new Promise<any>((resolve, reject) => {
             setTimeout(() => {
 
-                let params = JSON.parse(JSON.stringify((opts.body)));
+                if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
+                    let params:any = opts.body; //что передаём
+                    console.log('params ' + params);
 
-                //auth
-                let filteredUsers = users.filter((user: any) => {
-                    return user.userName === params.userName && user.userPassword === params.userPassword;
-                });
+                    //auth
+                    let filteredUsers = users.filter((user: { userName: any; userPassword: any; }) => {
+                        console.log('user ' + JSON.stringify(user)); //с чем сравниваем
+                        return user.userName === params.userName && user.userPassword === params.userPassword; //проблема видимо именно в этом //Да, юзер не кидается в filteredUsers
+                    });
 
-                if (filteredUsers.length) {
-                    let user = filteredUsers[0];
-                    let responseJson = {
-                        id: user.id,
-                        userName: user.userName,
-                        userPassword: user.userPassword,
-                        token: '86fasfgfsogHGad'
-                    };
-                    resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)).then(() => console.log('logged in lol')) });
-                } else {
-                    reject('Почта или пароль неверны');
+                    console.log('filteredUsers ' + filteredUsers[0]);
+
+                    if (filteredUsers.length) {
+                        let user = filteredUsers[0];
+                        let responseJson = {
+                            userName: user.userName,
+                            userPassword: user.userPassword,
+                            token: '86fasfgfsogHGad'
+                        };
+                        resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson))});
+                    } else {
+                        reject('Почта или пароль неверны');
+                    }
+
                 }
                 
-                    return;
-            }, 500);
+                return;
+            }, 0);
         });
     }
 }
