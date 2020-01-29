@@ -86,6 +86,7 @@ const useStyles = makeStyles(theme => ({
 const SignIn = (props: any) => {
   const [userName, setUserName] = useState(''); //Хук для ввода почты
   const [userPassword, setUserPassword] = useState(''); //Хук для ввода пароля
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loggingIn, setLoggingIn] = useState(false); //Хук для залива
   useStyles(props);
 
