@@ -18,6 +18,7 @@ import Container from '@material-ui/core/Container';
 import defaultTheme from '@material-ui/core/styles/defaultTheme';
 
 import styled from 'styled-components';
+import { store } from '../../_helpers/store';
 
 const theme = defaultTheme; //Для передачи пропа в styled-components
 
@@ -71,7 +72,7 @@ function Copyright() {
   );
 }
 
-function mapState(state) {
+const mapState = (state) => {
   const { loggingIn } = state.authentication;
   return { loggingIn };
 }
@@ -88,15 +89,19 @@ const SignIn = (props: any) => {
   const [userPassword, setUserPassword] = useState(''); //Хук для ввода пароля
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loggingIn, setLoggingIn] = useState(false); //Хук для залива
+  const [displayAlert, setDisplayAlert] = useState(false);
+
+  store.subscribe(() => {
+    setDisplayAlert(true);
+  })
+
   useStyles(props);
 
   const submitControl = (event: any, props: any) => {
     event.preventDefault();
-    console.log('the submit button is clicked.', event.target);
     setLoggingIn(true);
     if (userName && userPassword) {
       props.login(userName, userPassword);
-      console.log('userName and userPassword are passed to login');
     }
   }
   
@@ -106,6 +111,22 @@ const SignIn = (props: any) => {
 
   const handlePasswordInput = (event: any) => {
     setUserPassword(event.target.value);
+  }
+
+  const handleAlert = () => {
+    if (displayAlert === true) {
+      return true;
+    } else {
+      return;
+    }
+  }
+
+  const displayHelperText = () => {
+    if (displayAlert === true) {
+      return 'Неверный пароль';
+    } else {
+      return;
+    }
   }
 
   return (
@@ -143,11 +164,13 @@ const SignIn = (props: any) => {
             id="password"
             onChange = {(e: any) => {handlePasswordInput(e)}}
             value = {userPassword}
-            // error = {} Проп должен работать только при получении негативного респонса от бэкенда
+            error = {handleAlert()}
+            helperText={displayHelperText()}
+            
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />} //Если отмечено "запомнить", то надо добавлять этот проп в submitObject и тогда сторить токен в localStorage
-            label="Запомнить меня"                                  //Иначе не нужно
+            control={<Checkbox value="remember" color="primary" />}
+            label="Запомнить меня"
           />
           <SubmitButton
             type="submit"
