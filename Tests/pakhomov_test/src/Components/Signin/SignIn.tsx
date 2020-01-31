@@ -31,7 +31,6 @@ const SubmitButton = styled(Button)`
   height: 48px;
   margin: ${theme.spacing(3, 0, 2)};
   padding: 0 30px;
-  backgroundColor: ${theme.palette.primary.main}
 `;
 
 const MyContainer = styled(Container)`
