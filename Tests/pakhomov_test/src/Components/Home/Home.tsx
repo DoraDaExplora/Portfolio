@@ -1,6 +1,7 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
@@ -36,6 +37,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const logout = () => {
+  localStorage.clear();
+  console.log('You have logged out');
+  window.location.replace('/');
+}
+
 export default function Home(props) {
   const classes = useStyles(props);
 
@@ -50,6 +57,7 @@ export default function Home(props) {
           {'Pin a footer to the bottom of the viewport.'}
           {'The footer will move as the main element of the page grows.'}
         </Typography>
+        <Button onClick={() => logout()}>Выйти</Button>
         <Typography variant="body1">Sticky footer placeholder.</Typography>
       </Container>
       <footer className={classes.footer}>
