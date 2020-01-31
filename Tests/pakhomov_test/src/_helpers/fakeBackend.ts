@@ -8,7 +8,6 @@ localStorage.setItem('users', JSON.stringify([{
 }]));
 
 let users = JSON.parse(localStorage.getItem('users'));
-console.log('users from localStorage ' + JSON.stringify(users));
 
 
 export function configureFakeBackend() {
@@ -18,15 +17,11 @@ export function configureFakeBackend() {
 
                 if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
                     let params:any = JSON.parse(opts.body);
-                    console.log('params ' + params);
 
                     //auth
                     let filteredUsers = users.filter((user: { userName: any; userPassword: any; }) => {
-                        console.log('user ' + JSON.stringify(user));
                         return user.userName === params.userName && user.userPassword === params.userPassword;
                     });
-
-                    console.log('filteredUsers ' + filteredUsers[0]);
 
                     if (filteredUsers.length) {
                         let user = filteredUsers[0];
