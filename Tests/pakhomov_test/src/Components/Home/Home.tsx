@@ -5,6 +5,9 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import defaultTheme from '@material-ui/core/styles/defaultTheme'
+
+import styled from 'styled-components';
 
 function Copyright() {
   return (
@@ -19,22 +22,27 @@ function Copyright() {
   );
 }
 
+const theme = defaultTheme;
+
+const LogoutButton = styled(Button)`
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  height: 48px;
+  margin: ${theme.spacing(3, 0, 2)};
+  padding: 0 30px;
+  backgroundColor: ${theme.palette.primary.main}
+`
+
+const MyContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+`;
+
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-  },
-  footer: {
-    padding: theme.spacing(3, 2),
-    marginTop: 'auto',
-    backgroundColor:
-      theme.palette.type === 'dark' ? theme.palette.grey[800] : theme.palette.grey[200],
-  },
 }));
 
 const logout = () => {
@@ -44,28 +52,18 @@ const logout = () => {
 }
 
 export default function Home(props) {
-  const classes = useStyles(props);
+  useStyles(props);
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Container component="main" className={classes.main} maxWidth="sm">
-        <Typography variant="h2" component="h1" gutterBottom>
-          Sticky footer
+      <MyContainer component="main" maxWidth="sm">
+        <CssBaseline />
+        <Typography variant="h3" component="h1" align="center">
+          Ну, вы залогинились.
         </Typography>
-        <Typography variant="h5" component="h2" gutterBottom>
-          {'Pin a footer to the bottom of the viewport.'}
-          {'The footer will move as the main element of the page grows.'}
+        <Typography variant="h5" component="h2" align="center">
+          {'Хотите разлогиниться?'}
         </Typography>
-        <Button onClick={() => logout()}>Выйти</Button>
-        <Typography variant="body1">Sticky footer placeholder.</Typography>
-      </Container>
-      <footer className={classes.footer}>
-        <Container maxWidth="sm">
-          <Typography variant="body1">My sticky footer can be found here.</Typography>
-          <Copyright />
-        </Container>
-      </footer>
-    </div>
+        <LogoutButton variant="contained" color="secondary" onClick={() => logout()}>Выйти</LogoutButton>
+      </MyContainer>
   );
 }
