@@ -72,9 +72,9 @@ function Copyright() {
   );
 }
 
-const mapState = (state) => {
-  const { loggingIn } = state.authentication;
-  return { loggingIn };
+const mapStateToProps = (state) => {
+  const { alert } = state.alert;
+  return { displayAlert: alert };
 }
 
 const actionCreators = {
@@ -89,11 +89,6 @@ const SignIn = (props: any) => {
   const [userPassword, setUserPassword] = useState(''); //Хук для ввода пароля
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loggingIn, setLoggingIn] = useState(false); //Хук для залива
-  const [displayAlert, setDisplayAlert] = useState(false);
-
-  store.subscribe(() => {
-    setDisplayAlert(true);
-  })
 
   useStyles(props);
 
@@ -113,16 +108,8 @@ const SignIn = (props: any) => {
     setUserPassword(event.target.value);
   }
 
-  const handleAlert = () => {
-    if (displayAlert === true) {
-      return true;
-    } else {
-      return;
-    }
-  }
-
-  const displayHelperText = () => {
-    if (displayAlert === true) {
+  const displayHelperText = (props) => {
+    if (props.displayAlert === true) {
       return 'Неверный пароль';
     } else {
       return;
@@ -164,8 +151,8 @@ const SignIn = (props: any) => {
             id="password"
             onChange = {(e: any) => {handlePasswordInput(e)}}
             value = {userPassword}
-            error = {handleAlert()}
-            helperText={displayHelperText()}
+            error = {props.displayAlert}
+            helperText={displayHelperText(props)}
             
           />
           <FormControlLabel
@@ -201,6 +188,6 @@ const SignIn = (props: any) => {
   );
 }
 
-const connectedSignIn = connect(mapState, actionCreators)(SignIn);
+const connectedSignIn = connect(mapStateToProps, actionCreators)(SignIn);
 export { connectedSignIn as SignIn};
 

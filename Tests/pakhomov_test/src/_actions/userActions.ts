@@ -13,6 +13,7 @@ function login(userName, userPassword) {
         userService.login(userName, userPassword)
             .then(
                 user => { 
+                    dispatch(alertActions.success());
                     dispatch(success(user));
                 },
                 error => {

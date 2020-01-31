@@ -8,6 +8,10 @@ export function alert(state = {}, action: any) {
         message: action.message,
         alert: true
       };
+    case alertConstants.SUCCESS:
+      return {
+        alert: false
+      }
     default:
       return state
   }
