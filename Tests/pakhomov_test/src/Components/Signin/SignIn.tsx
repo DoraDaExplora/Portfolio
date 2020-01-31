@@ -20,6 +20,8 @@ import defaultTheme from '@material-ui/core/styles/defaultTheme';
 import styled from 'styled-components';
 import { store } from '../../_helpers/store';
 
+// import { push } from 'connected-react-router'
+
 const theme = defaultTheme; //Для передачи пропа в styled-components
 
 const SubmitButton = styled(Button)`
@@ -74,7 +76,8 @@ function Copyright() {
 
 const mapStateToProps = (state) => {
   const { alert } = state.alert;
-  return { displayAlert: alert };
+  const { loggedIn } = state.authentication;
+  return { displayAlert: alert, loggedIn };
 }
 
 const actionCreators = {
