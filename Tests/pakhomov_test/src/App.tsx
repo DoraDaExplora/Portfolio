@@ -24,22 +24,20 @@ const isUserLoggedIn = () => {
   }
 }
 
-isUserLoggedIn();
-
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div>
         <Router>
-          <Switch>
-            { localStorage.getItem('savedUser')
-            ? <Redirect to={{pathname: '/loggedIn'}}/>
-            : <SignIn/>  
+        { isUserLoggedIn()
+            ? <Redirect from='/' to='/loggedIn'/>
+            : '' 
           }
+          <Switch>
             <Route exact path="/">
               <SignIn/>
             </Route>
-            <Route path="/loggedIn">
+            <Route exact path="/loggedIn">
               <Home/>
             </Route>
           </Switch>
