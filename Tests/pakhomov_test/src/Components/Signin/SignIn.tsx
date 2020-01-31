@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+
 import { userActions } from '../../_actions/userActions';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -18,9 +19,6 @@ import Container from '@material-ui/core/Container';
 import defaultTheme from '@material-ui/core/styles/defaultTheme';
 
 import styled from 'styled-components';
-import { store } from '../../_helpers/store';
-
-// import { push } from 'connected-react-router'
 
 const theme = defaultTheme; //Для передачи пропа в styled-components
 
