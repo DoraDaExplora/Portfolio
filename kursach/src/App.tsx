@@ -17,37 +17,44 @@ const App: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleAnswer = (e: any, key: string) => {
-    let previousAnswer = '';
 
-    if (key !== previousAnswer) {
       answersArray.push({
         answerKey: key,
         userAnswerValue: e.target.value,
       });
-      previousAnswer = key;
-    } else {
-      return;
-    }
 
-    if (answersArray.length === questions.length) {
-      setAllQuestionsAnswered(true);
-    }
+    // if (answersArray.length === questions.length) {
+    //   setAllQuestionsAnswered(true);
+    // }
   };
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const determineVacancies = () => {
     console.log(answersArray);
-    answersArray.map((answer) => {
-      console.log('answer: ' + JSON.stringify(answer));
-      if (
-        answer.userAnswerValue === (vacancies[0] as VacancyInterface).vacancySkills.experience && //вот этот механизм неправильный
-        answer.userAnswerValue === (vacancies[0] as VacancyInterface).vacancySkills.management
-      ) {
-        answersArrayNormalized.push(vacancies[0].vacancyTitle);
-        console.log('подходит: ' + JSON.stringify(answersArrayNormalized));
-      }
+    const vacanciesStrings: string[] = answersArray.filter((item) => {
+      return item.userAnswerValue;
+    }).map((item) => {
+      return item.answerKey;
     });
-    console.log(answersArrayNormalized);
+    console.log("vacanciesStrings: ", vacanciesStrings);
+    const suitableVacancies: any[] = vacancies.filter((item) => {
+      const availableSkills: string[] = Object.entries(item.vacancySkills).filter(([key, value]) => {
+        return value;
+      }).map((item) => {
+        return item[0];
+      });
+
+      console.log('availableSkills: ', availableSkills)
+      let suitableSkillsAmount = 0;
+      availableSkills.forEach((skillName: string) => {
+        if (vacanciesStrings.includes(skillName)) {
+          suitableSkillsAmount += 1;
+        }
+      });
+      console.log('suitableSkillsAmount: ' + suitableSkillsAmount);
+      return (suitableSkillsAmount === vacanciesStrings.length);
+    });
+    console.log(suitableVacancies);
   };
 
   return (
