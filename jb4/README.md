@@ -9,3 +9,8 @@
 - TypeScript
 - SASS, SCSS
 - In-House разработанное ядро, разработанное в Teeqer, где я на тот момент работал.
+
+## Как запустить?
+
+1. yarn
+2. yarn start
