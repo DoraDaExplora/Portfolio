@@ -1,12 +1,14 @@
-## Requirements
+# Kaspersky Polling
 
-* Nodejs v11.6.0
-* Yarn
-* Typescript ^3.1.1
+## Что это такое?
+Проект по запиливанию опросника в рамках турецкой рекламной кампании Kaspersky.
 
-## How to build
+## Стек
+- TypeScript
+- SCSS
+- In-House ядро, разработанное в Teeqer, где я работал на момент разработки.
+
+## Как запустить?
 
 * yarn
-* yarn build
-
-Afterwards, built project will be in the "build" folder.
+* yarn start
